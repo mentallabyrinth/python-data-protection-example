@@ -1,0 +1,4 @@
+# Copy to doppler.yaml after creating the project in Doppler, or run: doppler setup
+setup:
+  project: data-protection
+  config: dev

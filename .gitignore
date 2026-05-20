@@ -1,0 +1,14 @@
+# Safety net — secrets belong in Doppler or Infisical, not beside the app
+.env
+.env.*
+!.env.example
+.infisical.json
+
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/

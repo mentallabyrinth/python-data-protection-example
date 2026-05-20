@@ -1,0 +1,43 @@
+[project]
+name = "data-protection"
+version = "0.1.0"
+description = "Demonstrate data protection with Pydantic classification and log redaction"
+readme = "README.md"
+authors = [
+    { name = "resetvector", email = "brandon.lint@exome.io" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "email-validator>=2.3.0",
+    "faker>=40.18.0",
+    "fastapi>=0.136.1",
+    "pydantic>=2.13.4",
+    "pydantic-settings>=2.14.1",
+    "scalar-fastapi>=1.8.2",
+    "uvicorn[standard]>=0.47.0",
+]
+
+[project.scripts]
+data-protection = "data_protection.main:main"
+data-protection-api = "data_protection.api.main:run"
+
+[build-system]
+requires = ["uv_build>=0.9.26,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.0.3",
+    "ruff>=0.15.13",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
